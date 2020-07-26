@@ -39,13 +39,13 @@ const addBotText = (text) => {
 
 const botVoice= (userSpeech) => {
   const reply = new SpeechSynthesisUtterance();
-  reply.text = "Sorry, I did not understand that.";
+  reply.text = "hmm say that again";
 
   if(userSpeech.includes('Hello Mike')) {
     reply.text = 'Hi fellow human, how are you today?';
   }
 
-  if(userSpeech.includes('fine') || userSpeech.includes('fine thank you and you?')  || userSpeech.includes('good')) {
+  if(userSpeech.includes('Fine') || userSpeech.includes('fine thank you and you?')  || userSpeech.includes('good') || userSpeech.includes('fine')) {
     reply.text = 'I am fine too, Do you like the internship so far? yes? or no?';
   }
   if (userSpeech.includes('Yes')) {
@@ -55,7 +55,10 @@ const botVoice= (userSpeech) => {
      reply.text = "You can do this!";
    }
   if (userSpeech.includes('Thank you') || userSpeech.includes('Thanks')) {
-     reply.text = "You are welcome!. Have a great day!";
+     reply.text = "You are welcome!. Have a great day!, Goodbye!";
+   }
+  if (userSpeech.includes('Bye') || userSpeech.includes('bye')) {
+     reply.text = "";
    }
    window.speechSynthesis.speak(reply);
    var element = document.querySelector(".chat-box");
