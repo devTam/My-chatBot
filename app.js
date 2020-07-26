@@ -45,7 +45,7 @@ const botVoice= (userSpeech) => {
     reply.text = 'Hi fellow human, how are you today?';
   }
 
-  if(userSpeech.includes('fine') || userSpeech.includes('fine thank you and you?')) {
+  if(userSpeech.includes('fine') || userSpeech.includes('fine thank you and you?')  || userSpeech.includes('good')) {
     reply.text = 'I am fine too, Do you like the internship so far? yes? or no?';
   }
   if (userSpeech.includes('Yes')) {
@@ -53,6 +53,9 @@ const botVoice= (userSpeech) => {
    }
   if (userSpeech.includes('No')) {
      reply.text = "You can do this!";
+   }
+  if (userSpeech.includes('thank you')) {
+     reply.text = "You are welcome";
    }
    window.speechSynthesis.speak(reply);
    var element = document.querySelector(".chat-box");
