@@ -54,8 +54,8 @@ const botVoice= (userSpeech) => {
   if (userSpeech.includes('No')) {
      reply.text = "You can do this!";
    }
-  if (userSpeech.includes('thank you')) {
-     reply.text = "You are welcome";
+  if (userSpeech.includes('Thank you') || userSpeech.includes('Thanks')) {
+     reply.text = "You are welcome!. Have a great day!";
    }
    window.speechSynthesis.speak(reply);
    var element = document.querySelector(".chat-box");
