@@ -42,16 +42,17 @@ const botVoice= (userSpeech) => {
   reply.text = "Sorry, I did not understand that.";
 
   if(userSpeech.includes('Hello Mike')) {
-    reply.text = 'Hi Tammy';
+    reply.text = 'Hi fellow human, how are you today?';
   }
-  if(userSpeech.includes('How are you')) {
-    reply.text = 'I am fine, thanks. How are you?';
+
+  if(userSpeech.includes('fine') || userSpeech.includes('fine thank you and you?')) {
+    reply.text = 'I am fine too, Do you like the internship so far? yes? or no?';
   }
-  if (userSpeech.includes('Fine')) {
-     reply.text = "Nice to hear that. How can I assist you today?";
+  if (userSpeech.includes('Yes')) {
+     reply.text = "keep going, there is light at the end of the tunnel";
    }
-  if (userSpeech.includes('Do you like this Internship')) {
-     reply.text = "It is very stressful, but I hope it will be worth it";
+  if (userSpeech.includes('No')) {
+     reply.text = "You can do this!";
    }
    window.speechSynthesis.speak(reply);
    var element = document.querySelector(".chat-box");
