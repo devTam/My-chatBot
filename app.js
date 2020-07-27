@@ -39,7 +39,10 @@ const addBotText = (text) => {
 
 const botVoice= (userSpeech) => {
   const reply = new SpeechSynthesisUtterance();
-  reply.text = "hmm say that again";
+  const replies = ['say that again', 'I didn\'t quite get that', 'let me try to google that', 'pardon']
+  reply.text = replies[Math.ceil(Math.random() * replies.length - 1 )];
+  console.log(reply.text);
+  
 
   if(userSpeech.includes('Hello Mike')) {
     reply.text = 'Hi fellow human, how are you today?';
